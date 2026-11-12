@@ -4,6 +4,8 @@ Config = {}
 
 Config.Debug = true            
 Config.CheckInterval = 1000    
+Config.WeatherTransitionTime = 15.0  -- seconds to blend from one weather to the next
+Config.EnforceInterval = 1000        -- ms between re-applying weather/time so GTA doesn't drift
 Config.DefaultRegion = 'countryside'  
 
 -- Fallbacks used if a region doesn't set its own defaults
@@ -24,6 +26,7 @@ Config.WeatherTypes = {
     { id = 'SNOWLIGHT',  label = 'Light Snow' },
     { id = 'SNOW',       label = 'Snow' },
     { id = 'BLIZZARD',   label = 'Blizzard' },
+    { id = 'XMAS',       label = 'Snow (Christmas)' },
 }
 
 
@@ -42,7 +45,6 @@ Config.Regions = {
         },
         defaultWeather = 'CLEAR',
         defaultHour = 12,
-        zone = { ... },
     },
     countryside = {
         label = 'Countryside',
@@ -52,7 +54,6 @@ Config.Regions = {
         },
         defaultWeather = 'CLOUDS',
         defaultHour = 10,
-        zone = { ... },
     },
     desert = {
         label = 'Blaine County Desert',
@@ -63,7 +64,6 @@ Config.Regions = {
         },
         defaultWeather = 'EXTRASUNNY',
         defaultHour = 14,
-        zone = { ... },
     },
     north = {
         label = 'Paleto & Mount Chiliad',
@@ -73,13 +73,11 @@ Config.Regions = {
         },
         defaultWeather = 'OVERCAST',
         defaultHour = 8,
-        zone = { ... },
     },
     ocean = {
         label = 'Open Ocean',
         zones = { 'OCEANA' },
         defaultWeather = 'CLEARING',
         defaultHour = 17,
-        zone = { ... },
     },
 }
